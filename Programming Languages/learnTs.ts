@@ -3605,3 +3605,26 @@ let myAdd = function(x, y) {
 };
 
 //////////////////////////////////
+
+////////////////////////////////////////////
+
+//----------------- Classes------------------------//
+
+//Classes inherit functionality and objects are built from these classes.
+
+class Greeter {
+  greeting: string;
+  constructor(message: string) {
+      this.greeting = message;   //it's a member access
+  }
+  greet() {
+      return "Hello, " + this.greeting;
+  }
+ }
+ //this class has three members:
+ // 1-) a property called greeting
+ // 2-) a constructor
+ // 3-) a method greet
+ 
+ let greeter = new Greeter("world");
+
