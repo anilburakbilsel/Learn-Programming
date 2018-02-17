@@ -3628,3 +3628,93 @@ class Greeter {
  
  let greeter = new Greeter("world");
 
+
+ //-----------------Inheritance-----------------//
+
+//Inheritance is an important pattern in Object Oriented Programming
+
+class Animal {      //Animal is the base class (superclass)
+  public move(distanceInMeters: number = 0) {  //default argument
+      console.log(`Animal moved ${distanceInMeters}m`);    //use `...` !!!  ,these are template strings
+  }
+}
+
+class Dog extends Animal {  //Dog is the derived class  (subclass)
+  public bark() {
+      console.log('Woof! Woof!');
+  }
+}
+
+const dog = new Dog();
+dog.bark();
+dog.move(10);
+dog.bark();
+
+
+//////////
+
+//here is a more complex example:
+
+class Animal {
+  name: string;
+  constructor(theName: string){ 
+      this.name = theName; 
+  }
+  move(distanceInMeters: number = 0) {
+      console.log(`${this.name} moved ${distanceInMeters}m.`);  //template strings
+  }
+}
+
+class Snake extends Animal {
+  constructor(name: string){ 
+      super(name); 
+  }
+  move(distanceInMeters = 5) {     //here, we're overriding the method defined in the super class
+      console.log("Slithering...");
+      super.move(distanceInMeters);
+  }
+}
+
+class Horse extends Animal {
+  constructor(name: string){ 
+      super(name);         //each constructor must call the super() method -- it will execute the constructor in base class
+  }
+  move(distanceInMeters = 45) {  //default value  
+      console.log("Galloping...");
+      super.move(distanceInMeters);
+  }
+}
+
+let sam = new Snake("Sammy the Python");
+let tom: Animal = new Horse("Tommy the Palomino");  //Animal is the appareant type, Horse is the actual type
+                                                  //this will call the method in the Horse class
+sam.move();
+tom.move(34);
+
+//in TypeScript. each member is public by default
+
+//When a member is marked private, it cannot be accessed from outside of its containing class. For example:
+class Animal {
+  private name: string;
+  constructor(theName: string) { this.name = theName; }
+}
+
+let myCat = new Animal("Cat").name; // Error: 'name' is private therefore we cannot access it outside of the class
+
+
+
+
+
+
+////-----------------Extra-Information-----------------////
+
+const arr0 = [1,2,3];
+const arr1 = arr0;
+
+const arr2 = [1,2,3];
+
+console.log(arr0 == arr1);  //true
+console.log(arr0 ==  arr2); //false
+
+console.log(arr0 === arr1); //true
+console.log(arr0 === arr2); //false
