@@ -3701,10 +3701,120 @@ class Animal {
 
 let myCat = new Animal("Cat").name; // Error: 'name' is private therefore we cannot access it outside of the class
 
+///////////////
+
+class Animal {  //Animal is the super class
+  private name: string;
+  constructor(theName: string){
+      this.name = theName; 
+  }
+}
+
+class Rhino extends Animal {  //Rhino is the subclass of the Animal
+  constructor(){ 
+      super("Rhino"); 
+  }
+}
+
+class Employee {
+  private name: string;
+  constructor(theName: string){
+      this.name = theName; 
+  }
+}
+
+let animal = new Animal("Goat");
+let rhino = new Rhino();
+let employee = new Employee("Bob");
+
+animal = rhino;
+animal = employee; // Error: 'Animal' and 'Employee' are not compatible
+
+///////
+
+//Protected
+// The protected modifier acts much like the private modifier with the exception that members declared protected can 
+// also be accessed by instances of deriving classes. 
+
+class Person {
+  protected name: string;
+  constructor(name: string) { 
+      this.name = name; 
+  }
+}
+
+class Employee extends Person {
+  private department: string;
+
+  constructor(name: string, department: string) {
+      super(name);         //we can use name here, because Employee is derived from Person
+      this.department = department;
+  }
+
+  public getElevatorPitch() {
+      return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+
+let howard = new Employee("Howard", "Sales");
+console.log(howard.getElevatorPitch());
+console.log(howard.name); // error, because name is a protected field
 
 
+//////////
+
+//A constructor may also be marked protected. This means that the class cannot be instantiated outside of its 
+//containing class, but can be extended. For example:
+class Person {
+  protected name: string;
+  protected constructor(theName: string) { this.name = theName; }
+}
+
+// Employee can extend Person
+class Employee extends Person {
+  private department: string;
+
+  constructor(name: string, department: string) {  //but here, we can extend the protected constructor
+      super(name);
+      this.department = department;
+  }
+
+  public getElevatorPitch() {
+      return `Hello, my name is ${this.name} and I work in ${this.department}.`;
+  }
+}
+
+let howard = new Employee("Howard", "Sales");
+let john = new Person("John"); // Error: The 'Person' constructor is protected
 
 
+/////////
+//readonly modifier 
+// You can make properties readonly by using the readonly keyword. Readonly properties must be initialized at their 
+// declaration or in the constructor.
+class Octopus {
+  readonly name: string;
+  readonly numberOfLegs: number = 8;  //here, the readonly property is initialized in its declaration
+  constructor (theName: string) {
+      this.name = theName;    //here, the readonly property is initialized in the constructor
+  }
+}
+let dad = new Octopus("Man with the 8 strong legs");
+dad.name = "Man with the 3-piece suit"; // error! name is readonly.
+//we could initialize a readonly property in the constructor of the 
+
+//----we could also do it like the below way:
+// class Octopus {
+//     readonly numberOfLegs: number = 8;
+//     constructor(readonly name: string) {
+      
+//     }
+// }
+// let dad = new Octopus("Man with the 8 strong legs");
+// console.log(dad.name);  //Man with the 8 strong legs
+
+
+//////////////////////////////////////////////////////////////
 
 ////-----------------Extra-Information-----------------////
 
