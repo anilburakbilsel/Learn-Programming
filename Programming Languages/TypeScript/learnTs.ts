@@ -3872,6 +3872,114 @@ console.log(grid2.calculateDistanceFromOrigin({x: 10, y: 10}));
 // prepending the name of the class. Similarly to prepending this. in front of instance accesses, here we prepend Grid. in front of 
 // static accesses.
 
+////////////
+//Abstract Classes
+
+//Abstract classes are base classes from which other classes may be derived. They may not be instantiated directly.
+//Unlike an interface, an abstract class may contain implementation details for its members. The abstract keyword is used to 
+//define abstract classes as well as abstract methods within an abstract class.
+
+abstract class Animal {  //this is an abstract class
+  abstract makeSound(): void;   //this MUST be implemented in the derived class
+  move(): void {
+      console.log("roaming the earth...");
+  }
+}
+
+//
+
+abstract class Department {
+  constructor(public name: string) {
+  }
+  printName(): void {
+      console.log("Department name: " + this.name);
+  }
+  abstract printMeeting(): void; // must be implemented in derived classes
+}
+
+class AccountingDepartment extends Department {
+  constructor() {
+      super("Accounting and Auditing"); // constructors in derived classes must call super()
+  }
+  printMeeting(): void {
+      console.log("The Accounting Department meets each Monday at 10am.");
+  }
+  generateReports(): void {
+      console.log("Generating accounting reports...");
+  }
+}
+
+let department: Department; // ok to create a reference to an abstract type
+department = new Department(); // error: cannot create an instance of an abstract class
+department = new AccountingDepartment(); // ok to create and assign a non-abstract subclass
+department.printName();
+department.printMeeting();
+department.generateReports(); // error: method doesn't exist on declared abstract type
+
+////////
+
+
+class Greeter {
+  greeting: string;
+  constructor(message: string) {
+      this.greeting = message;
+  }
+  greet() {
+      return "Hello, " + this.greeting;
+  }
+}
+
+let greeter: Greeter;  //here, we’re using Greeter as the type of instances of the class Greeter
+greeter = new Greeter("world");
+//let greeter: Greeter = new Greeter("world");  //above two lines is identical to this line
+console.log(greeter.greet());
+
+
+/////
+
+class Greeter {
+  static standardGreeting = "Hello, there";
+  greeting: string;
+  greet() {
+      if (this.greeting) {
+          return "Hello, " + this.greeting;
+      }
+      else {
+          return Greeter.standardGreeting;
+      }
+  }
+}
+
+let greeter1: Greeter;
+greeter1 = new Greeter();
+console.log(greeter1.greet());
+
+let greeterMaker: typeof Greeter = Greeter;
+greeterMaker.standardGreeting = "Hey there!";
+
+let greeter2: Greeter = new greeterMaker();
+console.log(greeter2.greet());
+
+///
+
+//a class declaration creates two things: a type representing instances of the class and a constructor function.
+//because classes creates types, we can use them in the same places we would be able to use interfaces.
+
+class Point {
+  x: number;
+  y: number;
+}
+
+interface Point3d extends Point {
+  z: number;
+}
+
+let point3d: Point3d = {
+    x: 1, 
+    y: 2, 
+    z: 3
+  };
+
 //////////////////////////////////////////////////////////////
 
 ////-----------------Extra-Information-----------------////
