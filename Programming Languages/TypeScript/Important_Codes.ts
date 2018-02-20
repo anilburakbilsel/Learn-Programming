@@ -78,3 +78,29 @@ greeterMaker.standardGreeting = "Hey there!";
 let greeter2: Greeter = new greeterMaker();
 console.log(greeter2.greet());  //Hey there!
 //the type of greeterMaker is function (more precisely, it is the constructor function)
+
+
+////----------------------------------------------------------////
+
+
+//the following is an important example:
+let myAdd: (x: number, y: number) => number =
+  function (x: number, y: number): number { return x + y; };
+//if the function does not return anything then we should put void.
+console.log(myAdd(10, 20)); //30
+
+
+let myAddAlternate: (x: number, y: number) => number =
+  function (x, y) { return x + y; };
+
+////----------------------------------------------------------////
+
+
+function buildNameRest(firstName: string, ...restOfName: string[]) {
+    return firstName + " " + restOfName.join(" ");
+  }
+  //Rest parameters are treated as a boundless number of optional parameters. When passing arguments for a rest parameter, you can use as many as you want; you can even pass none.
+  let employeeName = buildNameRest("Joseph", "Samuel", "Lucas", "MacKinzie");
+  //The compiler will build an array of the arguments passed in with the name given after the ellipsis (...), allowing you to use it in your function.
+  
+  let buildNameFun: (fname: string, ...rest: string[]) => string = buildNameRest;

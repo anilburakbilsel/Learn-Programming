@@ -3994,3 +3994,100 @@ console.log(arr0 ==  arr2); //false
 
 console.log(arr0 === arr1); //true
 console.log(arr0 === arr2); //false
+
+//////////////////////////////////////////////////////////////
+
+
+////------------------------Functions------------------------////
+
+//Functions play the key role in describing how to do things. 
+//TypeScript functions can be created both as a named function or as an anonymous function.
+
+// Named function
+function namedFunction(x, y) {
+  return x + y;
+}
+
+// Anonymous function
+let anonymousFunction = function (x, y) { return x + y; };
+
+//just as in JavaScript, functions can refer to variables outside of the function body. When they do so,
+//they are said to capture these variables. 
+let z = 100;
+function addToZ(x, y) {
+  return x + y + z;
+}
+
+/////////////
+
+function addFunction(x: number, y: number): number {
+  return x + y;
+}
+
+let myAddFunction = function (x: number, y: number): number { return x + y; };
+
+
+//the following is an important example:
+let myAdd: (x: number, y: number) => number =
+  function (x: number, y: number): number { return x + y; };
+//if the function does not return anything then we should put void.
+console.log(myAdd(10, 20)); //30
+
+
+let myAddAlternate: (x: number, y: number) => number =
+  function (x, y) { return x + y; };
+
+/////////
+//required
+function buildName(firstName: string, lastName: string) {
+  return firstName + " " + lastName;
+}
+let result3 = buildName("Bob", "Adams");
+
+///////
+//optional parameters
+//this is the type for the following function (firstName: string, lastName?: string) => string
+function buildNameOptional(firstName: string, lastName?: string) {
+  if (lastName)
+      return firstName + " " + lastName;
+  else
+      return firstName;
+}
+
+let result1 = buildNameOptional("Bob");    //works totally fine
+
+///////
+//default
+//this is the type for the following function (firstName: string, lastName?: string) => string
+function buildNameDefault(firstName: string, lastName = "Smith") {
+  return firstName + " " + lastName;
+}
+let result10 = buildNameDefault("Bob");                  // works correctly now, returns "Bob Smith"
+let result20 = buildNameDefault("Bob", undefined);       // still works, also returns "Bob Smith"
+let result40 = buildNameDefault("Bob", "Adams");         // ah, just right
+
+//////
+//Rest Parameters
+function buildNameRest(firstName: string, ...restOfName: string[]) {
+  return firstName + " " + restOfName.join(" ");
+}
+//Rest parameters are treated as a boundless number of optional parameters. When passing arguments for a rest parameter, you can use as many as you want; you can even pass none.
+let employeeName = buildNameRest("Joseph", "Samuel", "Lucas", "MacKinzie");
+//The compiler will build an array of the arguments passed in with the name given after the ellipsis (...), allowing you to use it in your function.
+
+let buildNameFun: (fname: string, ...rest: string[]) => string = buildNameRest;
+
+//some more rest parameters examples
+
+function sum(...theArgs) {
+  return theArgs.reduce((previous, current) => {
+      return previous + current;
+  });
+}
+
+console.log(sum(1, 2, 3));
+// expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// expected output: 10
+
