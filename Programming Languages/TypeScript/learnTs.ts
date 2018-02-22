@@ -4091,3 +4091,526 @@ console.log(sum(1, 2, 3));
 console.log(sum(1, 2, 3, 4));
 // expected output: 10
 
+// we can create arrays by 2 different ways
+
+let myArr0: number[] = [1, 2, 3, 4, 5];
+let myArr1: number[] = new Array(4);
+
+for (let i = 0; i < myArr1.length; i++) {
+  myArr1[i] = i * 2;
+  console.log(myArr1[i]);
+}
+
+
+let total = [0, 1, 2, 3].reduce(function (a, b) {
+  return a + b;
+});
+console.log("total is : " + total);
+
+
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function (a, b) {  //sort the array in ascending order
+  return a - b;                //if it is smaller than 0 then put a before b, if it's bigger than 0 then put b before a, otherwise (0) leave them as they are.
+});
+console.log(numbers);
+// [1, 2, 3, 4, 5]
+
+
+//////////////////
+
+
+var items = [
+  { name: 'Edward', value: 21 },
+  { name: 'Sharpe', value: 37 },
+  { name: 'And', value: 45 },
+  { name: 'The', value: -12 },
+  { name: 'Magnetic', value: 13 },
+  { name: 'Zeros', value: 37 }
+];
+
+// sort by value
+items.sort(function (a, b) {
+  return a.value - b.value;
+});
+
+// sort by name
+items.sort(function (a, b) {
+  var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+  var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  // names must be equal
+  return 0;
+});
+
+
+//////////////////
+
+// Array Destructuring
+var arr12: number[] = [12, 13]
+var [x, y] = arr12;
+console.log(x);  //12
+console.log(y);  //13
+
+//////////////////
+
+var j: any;
+var nums: number[] = [1001, 1002, 1003, 1004]
+
+for (j in nums) {
+  console.log(nums[j])
+}
+
+//////////////////
+let names: string[] = new Array("Mary", "Tom", "Jack", "Jill")
+function disp(arr_names: string[]) {
+  for (var i = 0; i < arr_names.length; i++) {
+    console.log(names[i])
+  }
+}
+disp(names)
+
+//////////////////
+
+function disp1(): string[] {
+  return new Array("Mary", "Tom", "Jack", "Jill")
+}
+var returnArray: string[] = disp1();
+for (var i in returnArray) {
+  console.log(returnArray[i])
+}
+
+
+//////////////////
+
+// Multi-Dimensional Arrays
+// An array element can reference another array for its value.
+let myArrAnil: number[][] = [[10, 20, 30], [1, 2, 3]];  //this declares an array with 2 elements, each of these elements refer to another array having 3 elements.
+// the inner arrays are referenced arrays
+for (let i = 0; i < myArrAnil.length; i++) {
+  for (let a = 0; a < myArrAnil[i].length; a++) {
+    console.log(myArrAnil[i][a]);
+  }
+}
+
+//////////////////
+
+// Tuples
+let mytuple = [10, "Hello", "World", "typeScript"];
+console.log("Items before push " + mytuple.length)    // returns the tuple size 
+mytuple.push(12)                                    // append value to the tuple 
+console.log("Items after push " + mytuple.length)
+console.log("Items before pop " + mytuple.length)
+console.log(mytuple.pop() + " popped from the tuple") // removes and returns the last item
+console.log("Items after pop " + mytuple.length)
+// The push() appends an item to the tuple
+// The pop() removes and returns the last value in the tuple
+// Tuples are mutable which means you can update or change the values of tuple elements.
+
+//////////////////
+//unions
+var val: string | number
+val = 12
+console.log("numeric value of val " + val)
+val = "This is a string"
+console.log("string value of val " + val)
+//in the above example, the variable's type is union. It means that the variable can contain either a number or a string as its value. 
+
+//
+
+function dispUnion(name: string | string[]) {
+  if (typeof name == "string") {
+    console.log(name)
+  } else {
+    var i;
+
+    for (i = 0; i < name.length; i++) {
+      console.log(name[i])
+    }
+  }
+}
+dispUnion("mark");
+console.log("Printing names array....");
+dispUnion(["Mark", "Tom", "Mary", "John"]);
+
+//
+
+var arrUnion: number[] | string[];
+var ix: number;
+arrUnion = [1, 2, 4]
+console.log("**numeric array**")
+
+for (ix = 0; ix < arrUnion.length; ix++) {
+  console.log(arrUnion[ix])
+}
+
+arrUnion = ["Mumbai", "Pune", "Delhi"]
+console.log("**string array**")
+
+for (ix = 0; ix < arrUnion.length; ix++) {
+  console.log(arrUnion[ix])
+}
+
+/////////////////////////////
+
+//  Interfaces
+
+// to reuse the signature across objects we can define it as an interface.
+
+interface IPerson { //this is the interface, it just has the signatures
+  firstName: string,
+  lastName: string,
+  sayHi: () => string
+}
+
+let customer: IPerson = {    //we can call this as an object (or variable) the customer object is of the type IPerson
+  firstName: "Tom",          //hence, it will now be binding on the object to define all properties as specified by the interface
+  lastName: "Hanks",
+  sayHi: () => { return "Hi" }
+};
+
+console.log("Customer Object ");
+console.log(customer.firstName);
+console.log(customer.lastName);
+console.log(customer.sayHi());
+
+var employee: IPerson = {
+  firstName: "Jim",
+  lastName: "Blakes",
+  sayHi: (): string => { return "Hello!!!" }
+}
+console.log("Employee  Object ");
+console.log(employee.firstName);
+console.log(employee.lastName);
+
+/////////////////////////////
+
+interface Person {
+  age: number
+}
+
+interface Musician extends Person {
+  instrument: string
+}
+
+var drummer = <Musician>{};
+drummer.age = 27;
+drummer.instrument = "Drums";
+console.log("Age:  " + drummer.age);
+console.log("Instrument:  " + drummer.instrument);
+//here is anoither way as well
+
+// let ahmet: Musician = {
+//   age :10,
+//   instrument : "guitar"
+// };  
+
+/////////////////////////////////////////////
+
+interface IParent1 {
+  v1: number
+}
+
+interface IParent2 {
+  v2: number
+}
+
+interface Child extends IParent1, IParent2 { }
+
+let Iobj: Child = {
+  v1: 12,
+  v2: 23
+};
+console.log("value 1: " + Iobj.v1 + " value 2: " + Iobj.v2)
+
+////////////////////////////////////////////////////////////////////////
+
+
+// Class in TypeScript
+
+// TypeScript is Object Oriented JavaScript
+// we are using classes to encapsulate the data
+
+class Car {
+  //let keyword is not used while declaring a field. 
+  //field 
+  engine: string;
+
+  //constructor (it's a must to create instances of this class)
+  constructor(engine: string) {
+    this.engine = engine
+  }
+
+  //function 
+  disp(): void {
+    console.log("Engine is  :   " + this.engine)
+  }
+}
+// the "this" keyword refers to the current instance of the class
+
+let myMerceds = new Car("c180 amg");
+console.log(myMerceds.engine); //field access
+myMerceds.disp();  //method invocation
+
+///////////
+
+class Shape {
+  Area: number
+
+  constructor(a: number) {
+    this.Area = a
+  }
+}
+
+class Circle extends Shape {
+  disp(): void {
+    console.log("Area of the circle:  " + this.Area);
+  }
+}
+
+var obj = new Circle(223);
+obj.disp();  //Area of the Circle: 223
+
+/////////////////
+
+// method overriding
+
+class PrinterClass {
+  doPrint(): void {
+    console.log("doPrint() from Parent called…")
+  }
+}
+
+class StringPrinter extends PrinterClass {
+  doPrint(): void {
+    super.doPrint()
+    console.log("doPrint() is printing a string…")
+  }
+}
+
+var nabersin = new StringPrinter();
+nabersin.doPrint();
+
+//the super keyword is used to refer to the immediate parent of a class. The keyword can be used to refer to the super class version of a variable, property or method.
+/////////////////
+
+// static members
+
+class StaticMem {
+  static num: number;
+
+  static disp(): void {
+    console.log("The value of num is " + StaticMem.num);
+  }
+}
+
+StaticMem.num = 12;   // initialize the static variable 
+StaticMem.disp();     // invoke the static method
+
+//////////////////////
+
+// the instanceof operator returns true if the object belongs to the specified type
+class Hayvan{ }
+let hayvanOgluHayvan = new Hayvan();
+let hayvanMi = hayvanOgluHayvan instanceof Hayvan; 
+console.log(" hayvanogluhayvan hayvan mi " + hayvanMi);
+
+//////////
+
+interface ILoan {
+  interest: number
+}
+
+class AgriLoan implements ILoan { //this class should implement all the fields and methods in the interface
+  interest: number;
+  rebate: number;
+
+  constructor(interest: number, rebate: number) {
+      this.interest = interest;
+      this.rebate = rebate;
+  }
+}
+
+var obj1234 = new AgriLoan(10, 1);
+console.log("Interest is : " + obj1234.interest + " Rebate is : " + obj1234.rebate);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ----------- Objects ----------- //
+
+// An object is an instance which contains set of key value pairs. The values can be scalar values or functions or 
+// even array of other objects.
+
+let myNewObject = { 
+  key1: “value1”, //scalar value 
+  key2: 10,  
+  key3: function() {
+     console.log("hello, how are you?");
+  }, 
+  key4:[10,20,30,40] //collection  
+};
+// As shown above, an object can contain scalar values, functions and structures like arrays and tuples.
+
+// Objects in Typescript must be an instance of a particular type.
+
+let theNewPerson = {  // this is an object
+  firstName: "Tom",
+  lastName: "Hanks",
+  sayHello: function () { }  //Type template 
+}
+theNewPerson.sayHello = function () {
+  console.log("hello " + theNewPerson.firstName);
+}
+theNewPerson.sayHello();
+
+
+///////
+
+
+let myYakisikli = {  //this is an object, because it has properties associated to it
+  firstname: "Tom",
+  lastname: "Hanks"
+};
+var invokeperson = function (obj: { firstname: string, lastname: string }) {
+  console.log("first name :" + obj.firstname);
+  console.log("last name :" + obj.lastname);
+};
+invokeperson(myYakisikli);
+invokeperson({firstname:"Anil",lastname:"Bilsel"});  // this is an anonymous object, it's still working
+
+//////////
+
+// DUKC TYPING
+// In duck-typing, two objects are considered to be of the same type if both share the same set of properties. 
+// Duck-typing verifies the presence of certain properties in the objects, rather than their actual type, to check their suitability.
+
+// “When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.”
+
+interface thePoint {
+  x: number
+  y: number
+}
+function addPoints(p1: thePoint, p2: thePoint): thePoint {  // p1 and p2 are examples to duck typing
+  let x = p1.x + p2.x
+  let y = p1.y + p2.y
+  return { x: x, y: y }
+}
+let newPoint = addPoints({ x: 3, y: 4 }, { x: 5, y: 1 })  
+console.log(newPoint.x);  //8
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// --------- Namespace --------- ///
+
+// A namespace is a way to logically group related code. 
+
+// This is inbuilt into TypeScript unlike in JavaScript where variables declarations go into a global scope and if multiple 
+// JavaScript files are used within same project there will be possibility of overwriting or misconstruing the same variables, 
+// which will lead to the “global namespace pollution problem” in JavaScript.
+
+namespace SomeNameSpaceName {
+  export interface ISomeInterfaceName { }
+  export class SomeClassName { }
+}
+// The classes or interfaces which should be accessed outside the namespace should be marked with keyword export.
+
+// To access the class or interface in another namespace, the syntax will be namespaceName.className :
+// for example SomeNameSpaceName.SomeClassName;
+
+// If the first namespace is in separate TypeScript file, then it should be referenced using triple slash reference syntax:
+/// <reference path = "SomeFileName.ts" />
+
+// The following program demonstrates use of namespaces :
+FileName: IShape.ts
+----------
+  namespace Drawing {
+  export interface IShape {
+    draw();
+  }
+}
+
+FileName: Circle.ts
+----------
+  /// <reference path = "IShape.ts" /> 
+  namespace Drawing {
+  export class Circle implements IShape {
+    public draw() {
+      console.log("Circle is drawn");
+    }
+  }
+}
+
+FileName: Triangle.ts
+----------
+  /// <reference path = "IShape.ts" /> 
+  namespace Drawing {
+  export class Triangle implements IShape {
+    public draw() {
+      console.log("Triangle is drawn");
+    }
+  }
+}
+
+FileName: TestShape.ts
+----------
+  /// <reference path = "IShape.ts" />   
+  /// <reference path = "Circle.ts" /> 
+  /// <reference path = "Triangle.ts" />  
+  function drawAllShapes(shape: Drawing.IShape) {
+    shape.draw();
+  }
+drawAllShapes(new Drawing.Circle());
+drawAllShapes(new Drawing.Triangle());
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/// --------- Module --------- ///
+
+// A module is designed with the idea to organize code written in TypeScript. Modules are broadly divided into :
+// Internal Modules  (instead of them, now we are using namespaces)
+// External Modules
+
+// IShape.ts 
+export interface IShape {
+  draw();
+}
+
+// Circle.ts 
+import shape = require("./IShape");
+export class Circle implements shape.IShape {
+  public draw() {
+      console.log("Cirlce is drawn (external module)");
+  }
+}
+
+// Triangle.ts 
+import shape = require("./IShape");
+export class Triangle implements shape.IShape {
+  public draw() {
+      console.log("Triangle is drawn (external module)");
+  }
+}
+
+// TestShape.ts 
+import shape = require("./IShape");
+import circle = require("./Circle");
+import triangle = require("./Triangle");
+
+function drawAllShapes(shapeToDraw: shape.IShape) {
+  shapeToDraw.draw();
+}
+
+drawAllShapes(new circle.Circle());
+drawAllShapes(new triangle.Triangle()); 
