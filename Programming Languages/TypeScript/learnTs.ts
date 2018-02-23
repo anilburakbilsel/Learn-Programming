@@ -1,3 +1,6 @@
+//https://basarat.gitbooks.io/typescript/docs/why-typescript.html
+// you can check out the above website for further information about TypeScript
+
 let list0: number[] = [1, 2, 3];
 let list1: Array<number> = [1, 2, 3];
 let a: boolean;
@@ -4614,3 +4617,102 @@ function drawAllShapes(shapeToDraw: shape.IShape) {
 
 drawAllShapes(new circle.Circle());
 drawAllShapes(new triangle.Triangle()); 
+
+////// ------------------- Generics ------------------- //////
+
+function identity1<T>(arg: T): T{   // T is the type variable, it is used to make the program generic 
+  return arg;                      // it will return a variable in the type T
+}
+// the above T allows us to capture the type the user provides, so that we can use that information later.
+// the above function is a generic function, as it works over a range of types. 
+// using "any" is not going to be generic, because it loses some information (for the argument and return type)
+
+let onePossibleOutput = identity<string>("myString");   // type of output will be "string"  (explicitly setting T to be string)
+let theOtherWay = identity("myOtherString");  // type argument inference (implicitly setting T to be string) 
+
+///////
+
+function logginIdentityArray<T>(arg: Array<T>): Array<T> {
+  console.log(arg.length);  // Array has a .length property
+  return arg;
+}
+
+//////
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+let myIdentity: <T>(arg: T) => T = identity;
+console.log(myIdentity("anil"));  // anil
+
+
+
+
+////// ------------------- Enumeration ------------------- //////
+
+enum Direction{  //this is a numeric enum
+  Up = 1,
+  Down,
+  Left,
+  Right,
+}
+// Above, we have a numeric enum where Up is initialized with 1. All of the following members are auto-incremented from that 
+// point on. In other words, Direction.Up has the value 1, Down has 2, Left has 3, and Right has 4.
+// each value is distinct from other values in the same enum.
+
+enum cevap {
+  No = 0,
+  Yes = 1,
+}
+function respond(recipient: string, message: cevap): void {
+  // ...
+}
+respond("Princess Caroline", cevap.Yes);
+
+enum Direction {   // STRING ENUM
+  UpS = "UP",
+  DownS = "DOWN",
+  LeftS = "LEFT",
+  RightS = "RIGHT",
+}
+// In a string enum, each member has to be constant-initialized with a string literal, or with another string enum member.
+
+// Each enum member has a value associated with it which can be either constant or computed. 
+
+enum FileAccess {
+  // constant members
+  None,
+  Read = 1 << 1,
+  Write = 1 << 2,
+  ReadWrite = Read | Write,
+  // computed member
+  G = "123".length
+}
+
+enum Enum {
+  A     //numeric enum
+}
+let a = Enum.A;
+let nameOfA = Enum[a]; // "A"   //this is not possible for string enums
+
+////////
+
+// there are also const enums
+const enum MyEnum {
+  A = 1,
+  B = A * 4
+}
+console.log(MyEnum.A);  // 1
+console.log(MyEnum.B);  // 4
+// Const enums can only use constant enum expressions and unlike regular enums they are completely removed during compilation. Const 
+// enum members are inlined at use sites. This is possible since const enums cannot have computed members.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let zoo: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+// When no best common type is found, the resulting inference is the union array type, (Rhino | Elephant | Snake)[].
+
