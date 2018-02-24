@@ -6,6 +6,7 @@ I will try to update this repository as much as possible.
 ### The Languages:
 
 1-) TypeScript (Right now, there are two different TypeScript files, you can read both of them, I guarantee you that by carefully reading those two TS files, you will learn a lot about TypeScript.)
+[a link](https://basarat.gitbooks.io/typescript/docs/javascript/equality.html)
 
 2-) Java 
 
