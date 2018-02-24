@@ -1,6 +1,42 @@
 //https://basarat.gitbooks.io/typescript/docs/why-typescript.html
 // you can check out the above website for further information about TypeScript
 
+// let provides block-scoping that is absent in the function-scoped var
+var x = 1;
+let y = 1;
+
+if (true) {
+  var x = 2;
+  let y = 2;
+}
+
+console.log(x);
+// expected output: 2
+
+console.log(y);
+// expected output: 1
+
+
+///////////////////////
+
+interface Point2D {
+  x: number;
+  y: number;
+}
+interface Point3D {
+  x: number;
+  y: number;
+  z: number;
+}
+var point2D: Point2D = { x: 0, y: 10 }
+var point3D: Point3D = { x: 0, y: 10, z: 20 }
+function iTakePoint2D(point: Point2D) { /* do something */ }
+
+iTakePoint2D(point2D); // exact match okay
+iTakePoint2D(point3D); // extra information okay
+iTakePoint2D({ x: 0 }); // Error: missing information `y`
+
+///////////////////////////
 let list0: number[] = [1, 2, 3];
 let list1: Array<number> = [1, 2, 3];
 let a: boolean;
