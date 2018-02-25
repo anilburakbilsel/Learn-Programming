@@ -12,6 +12,9 @@ And here is another link (a very good video) that shows you how to use the debug
 Visual Studio Code for your TypeScript projects, the video also explains you how to create a local-hosts to test your websites or online applications:
 [a link](https://www.youtube.com/watch?v=H1lgYojMCaQ)
 
+Here is a link about tslint: 
+[a link](https://narayanatechnicalworld.blogspot.ca/2016/05/what-is-tslint.html)
+
 
 2-) Java 
 
