@@ -104,3 +104,15 @@ function buildNameRest(firstName: string, ...restOfName: string[]) {
   //The compiler will build an array of the arguments passed in with the name given after the ellipsis (...), allowing you to use it in your function.
   
   let buildNameFun: (fname: string, ...rest: string[]) => string = buildNameRest;
+
+
+////----------------------------------------------------------////
+
+let myName: string = "anil";
+let myLove;
+if (typeof myName !== 'undefined'){
+    console.log(myName);  // prints anil
+}
+if (typeof myLove !== 'undefined'){
+    console.log(myLove);  // doesn't come at this point 
+}
