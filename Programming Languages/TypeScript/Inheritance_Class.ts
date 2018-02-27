@@ -23,12 +23,12 @@ class Point3D extends Point {
         this.z = z;
     }
     add(point: Point3D) {
-        var point2D = super.add(point);
+        var point2D = super.add(point);  // in JavaScript and TypeScript we can give less arguments (but not more arguments)
         return new Point3D(point2D.x, point2D.y, this.z + point.z);
     }
 }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Something {
     static instances = 0;
@@ -42,7 +42,7 @@ var s2 = new Something();
 console.log(Something.instances); // 2
 // we can have static members as well as static functions.
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class OtherPoint {
     name = "this is another class";
