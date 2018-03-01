@@ -5,7 +5,7 @@ I will try to update this repository as much as possible.
 
 ### The Languages:
 
-1-) TypeScript (Right now, there are two different TypeScript files, you can read both of  them, I guarantee you that by carefully reading those two TS files, you will learn a lot about TypeScript.)
+#### TypeScript (Right now, there are two different TypeScript files, you can read both of  them, I guarantee you that by carefully reading those two TS files, you will learn a lot about TypeScript.)
 [a link](https://basarat.gitbooks.io/typescript/docs/javascript/equality.html)
 
 And here is another link (a very good video) that shows you how to use the debugger in 
@@ -20,10 +20,28 @@ Here is a link about tslint:
 
 
 
-2-) Java 
+#### Java 
 
 This is a very good website if you want to learn Java, I highly encourage you to check out this website:
 [a link](https://www.geeksforgeeks.org/java/)
+
+
+#### JavaScript
+
+[a_link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+
+
+#### JSON
+
+JavaScript Object Notation (JSON) is a standard text-based format for representing structured data 
+based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., 
+sending some data from the server to the client, so it can be displayed on a web page, or vice versa). 
+
+[a link](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+
+[a link](https://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/)
+
+
 
 
 ### Some Important Tools to Learn
