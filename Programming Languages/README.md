@@ -1,11 +1,10 @@
 # Some Important Points in Programming:
 
 ### 4 main concepts of Object Oriented Programming are:
-
-Abstraction
-Encapsulation
-Inheritance
-Polymorphism
+    Abstraction
+    Encapsulation
+    Inheritance
+    Polymorphism
 
 
 ### Pointer:
