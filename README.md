@@ -48,3 +48,7 @@ sending some data from the server to the client, so it can be displayed on a web
 
 1-) Django -- It is a web framework (for back end) written in Python. Here is the link:
 [a link](https://tutorial.djangogirls.org/en/installation/)
+
+
+
+Variables are nothing but reserved memory locations to store values.

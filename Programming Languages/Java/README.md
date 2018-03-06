@@ -20,6 +20,8 @@ Data Types in Java:
 
 Data Type defines the values that a variable can take, for example if a variable has int data type, it can only take integer values. In Java, we have two categories of data type: 1-) Primitive Data Types 2-) Non-primitive Data Types. Arrays and Strings are non-primitive data types. 
 
+Non-primitive data types also sometimes called as Reference/Object Data Type
+
 Java is a statically typed language; a language is statically typed, if the data type of a variable is known at compile time. This means that we must specify the type of the variable (declare the variable) before we can use it.
 
 In Java, we have 8 primitive data types:
@@ -58,3 +60,20 @@ double: sufficient for holding 15 decimal digits. Default size is 8 bytes.     .
 float: sufficient for holding 6 to 7 decimal points. Default size is 4 bytes.  .f
 
 char: holds characters. Size is 2 bytes.
+
+```Java
+double num1 = 22.3;
+float num2 = 22.4f;   // here 22.4f is a literal and num2 is a variable
+// Always suffix float value with the "f" else compiler will consider it as double
+
+char ch = 'Z';
+String str = "anil burak"
+```
+
+Variables are nothing but reserved  memory locations to store values. This means that when we create a variable we reserve some space in the memory. 
+
+Based on the data type of a variable, the operating system allocates memory and decides what can be stored in that reserved memory. Therefore, by assigning different data types to variables, we can store integers, decimals, or characters in these variables. 
+
+Data Types:
+1-) Primitive Data Types
+2-) Reference/Object Data Types
