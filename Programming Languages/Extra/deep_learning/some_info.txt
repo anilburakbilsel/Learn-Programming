@@ -1,0 +1,5 @@
+Deep learning has allowed us to ‘teach’ computers what different things/objects look like and let it identify them all by itself. 
+
+ Image classification is NOT the same as detection; classification generally assumes that an image only has one object in it that 
+ can be classified into one of the categories it was trained with; it can only label an image with an appropriate category/class; it can’t 
+ tell you where in the image there might be an object or anything like that.
