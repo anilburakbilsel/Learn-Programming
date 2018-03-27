@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=C8YASVXnzLY
+
+
+Visual Code:
+
+tsc filename.ts
+node filename.js
+
+
+tsc --init  //this will create the tsconfig.json file
+
+
+https://code.visualstudio.com/docs/languages/typescript
+
+
+
+for package.json:
+
+https://docs.npmjs.com/getting-started/using-a-package.json
+
+https://docs.npmjs.com/files/package.json
+
+
+
+

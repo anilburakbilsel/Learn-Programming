@@ -1,0 +1,25 @@
+The steps for C# in Visual Code:
+
+dotnet new console
+
+(dotnet restore //this is optional, if .NET is >= 2)
+
+dotnet build
+or
+dotnet run
+
+
+
+
+
+https://www.microsoft.com/net/learn/get-started/macos
+(The above is for visual studio code, on the other hand, we could also use the visual studio for any .net application)
+
+https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code
+
+
+
+
+
+
+
