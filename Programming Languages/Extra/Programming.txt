@@ -1,0 +1,2 @@
+https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio?tabs=csharp
+(have a look at the link above)
