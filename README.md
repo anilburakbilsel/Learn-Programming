@@ -52,3 +52,12 @@ sending some data from the server to the client, so it can be displayed on a web
 
 
 Variables are nothing but reserved memory locations to store values.
+
+
+
+
+Here are also very good Youtube channels to learn interesting information about computer science and software engineering:
+
+[a link](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA)
+
+[a link](https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q)
