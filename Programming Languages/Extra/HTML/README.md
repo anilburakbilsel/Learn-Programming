@@ -20,3 +20,4 @@ JavaScript can add new HTML elements and attributes. JavaScript can react to all
 
 
 
+Here is also another good resource to learn HTML : https://github.com/mdn/beginner-html-site-scripted
