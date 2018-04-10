@@ -1,5 +1,17 @@
 This is going to be folder for JavaScript. I am also learning JavaScript so I believe this is going to be a very good experience for me as well. Because I always believe that the best way to learn something is to teach it.
 
+I will be learning JavaScript throught those sources:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Here are two very good online platforms that you can run your JavaScript codes
+
+http://jsbin.com/?html,output
+
+https://thimble.mozilla.org/en-US/anonymous/55e3a250-ffdd-451c-bca2-7f74d4bb02c9
+
+
+
 JavaScript: 
 Primitive parameters (such as a number) are passed to functions by value; the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
 
@@ -26,3 +38,20 @@ this is a function expression:
 var factorial = function fac(n) { return n < 2 ? 1 : n * fac(n - 1); };
 console.log(factorial(3));
 ```
+
+```JavaScript
+function map(f, a) {
+  var result = []; // Create a new Array
+  var i; // Declare variable
+  for (i = 0; i != a.length; i++)
+    result[i] = f(a[i]);
+      return result;
+}
+var f = function(x) {
+   return x * x * x; 
+}
+var numbers = [0, 1, 2, 5, 10];
+var cube = map(f,numbers);
+console.log(cube);
+```
+The above code returns :  [0,1,8,125,1000]
