@@ -4,6 +4,11 @@ I will be learning JavaScript throught those sources:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
+
+Functions in JavaScript: 
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions
+
 Here are two very good online platforms that you can run your JavaScript codes
 
 http://jsbin.com/?html,output
