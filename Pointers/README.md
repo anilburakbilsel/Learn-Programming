@@ -8,3 +8,9 @@ As an analogy, a page number in a book's index could be considered a pointer to 
 Pointers are used to store and manage the addresses of dynamically allocated blocks of memory. Such blocks are used to store data objects or arrays of objects. Most structured and object-oriented languages provide an area of memory, called the heap or free store, from which objects are dynamically allocated.
 
 We use pointers because it's easier to give someone an address to your home than to give a copy of your home to everyone.
+
+pointer: https://en.wikipedia.org/wiki/Pointer_(computer_programming)
+function pointers: https://en.wikipedia.org/wiki/Function_pointer
+
+why C has pointers: http://duramecho.com/ComputerInformation/WhyCPointers.html
+
