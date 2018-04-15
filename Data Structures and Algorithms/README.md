@@ -15,3 +15,12 @@ DS:  ArrayList, LinkedList...
 
 ADT: Map
 DS:  HashMap, TreeMap..
+
+
+Here are some web-links which are very good at explaining those concepts (also other concepts in programming):
+
+https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA
+
+https://www.youtube.com/channel/UC0RhatS1pyxInC00YKjjBqQ
+
+
