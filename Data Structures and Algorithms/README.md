@@ -24,3 +24,7 @@ https://www.youtube.com/channel/UClEEsT7DkdVO_fkrBw0OTrA
 https://www.youtube.com/channel/UC0RhatS1pyxInC00YKjjBqQ
 
 
+
+what is algorithm : https://whatis.techtarget.com/definition/algorithm
+
+
