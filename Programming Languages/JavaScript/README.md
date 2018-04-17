@@ -17,6 +17,12 @@ https://thimble.mozilla.org/en-US/anonymous/55e3a250-ffdd-451c-bca2-7f74d4bb02c9
 
 
 
+
+Arrow Functions in JavaScript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+
+
 JavaScript: 
 Primitive parameters (such as a number) are passed to functions by value; the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
 
