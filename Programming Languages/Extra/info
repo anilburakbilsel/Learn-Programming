@@ -1,0 +1,58 @@
+Hash Map (Hash Table) in C++
+
+Hash table (also, hash map) is a data structure that basically maps keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the corresponding value can be found.
+
+
+Concurrency and Parallelism:
+
+The two concepts are related, but different.
+
+Concurrency means that two or more calculations happen within the same time frame, and there is usually some sort of dependency between them.
+
+Parallelism means that two or more calculations happen simultaneously.
+
+Put boldly, concurrency describes a problem (two things need to happen together), while parallelism describes a solution (two processor cores are used to execute two things simultaneously).
+
+Parallelism is one way to implement concurrency, but it's not the only one. Another popular solution is interleaved processing (a.k.a. coroutines): split both tasks up into atomic steps, and switch back and forth between the two.
+
+By far the best known example of non-parallel concurrency is how JavaScript works: there is only one thread, and any asynchronous callback has to wait until the previous chunk of code has finished executing. This is important to know, because it guarantees that any function you write is atomic - no callback can interrupt it until it returns. But it also means that "busy loops" won't work - you can't set a timeout and then loop until it fires, because the loop will prevent the timeout callback from executing.
+
+
+Operating Systems:
+
+Operating systems mediate a program's actions. 
+
+Program's actions are mainly system calls.
+
+System calls: such as reading and writing files, sending and receiving network packets, starting new programs and running processes, etc...
+
+Enforcable policies in the OS control the authorized actions of the users.
+But OS cannot enforce application-specific policies.
+
+Multitasking and Virtual Memory:
+Before virtual memory existed, a word processor, e-mail program, and browser couldn’t be run at the same time unless there was enough memory to hold all three programs at once. This would mean that one would have to close one program in order to run the other, but now with virtual memory, multitasking is possible even when there is not enough memory to hold all executing programs at once.
+However, virtual memory can slow down performance. If the size of virtual memory is quite large in comparison to the real memory, then more swapping to and from the hard disk will occur as a result. Accessing the hard disk is far slower than using system memory. Using too many programs at once in a system with an insufficient amount of RAM results in constant disk swapping – also called thrashing, which can really slow down a system’s performance.
+
+Abstract Class vs Interface in Java:
+An abstract class is also good if you want to be able to declare non-public members. In an interface, all methods must be public.
+If you think you will need to add methods in the future, then an abstract class is a better choice. Because if you add new method headings to an interface, then all of the classes that already implement that interface will have to be changed to implement the new methods. That can be quite a hassle.
+Interfaces are a good choice when you think that the API will not change for a while.
+Interfaces are also good when you want to have something similar to multiple inheritance, since you can implement multiple interfaces. (But, you cannot extend multiple classes in Java)
+
+
+Java always pass by value (ALWAYS!!!!).
+
+Java Primitive Types and Class Types:
+A variable of a class type – like a String – stores objects of its class differently from how variables of primitive types – like int or char – store their values. Every variable, whether it’s of a primitive type or of a class type, is implemented as a location in computer memory. For a variable of a primitive type, the value of the variable is stored in the memory location assigned to the variable. So, if an integer variable is declared as “int x = 3”, then when we look at the memory location of “x”, there will be a “3” stored there just as expected.
+However, a variable of a class type only stores the memory address of where the object is located – not the values inside the object. So, if we have a class called “SomeClass”, when we create an object like this: “SomeClass anObject”, then when we look at “anObject” in memory, we will see that it does not store any of the variables that belong to that object in memory. Instead, the variable “anObject” just stores an address of another place in memory where all the details of “anObject” reside. This means that the object named by the variable is stored in some other location in memory and the variable contains only the memory address of where the object is stored. This memory address is called a reference to the object. 
+
+
+
+The Compilation of C++
+The compilation of a C++ program involves three steps:
+
+Preprocessing: the preprocessor takes a C++ source code file and deals with the #includes, #defines and other preprocessor directives. The output of this step is a "pure" C++ file without pre-processor directives.
+
+Compilation: the compiler takes the pre-processor's output and produces an object file from it.
+
+Linking: the linker takes the object files produced by the compiler and produces either a library or an executable file.
