@@ -18,3 +18,25 @@ array=(valA valB valC)              # and another
 ${array[i]}                  # displays array's value for this index. If no index is supplied, array element 0 is assumed
 ${#array[i]}                 # to find out the length of any element in the array
 ${#array[@]}                 # to find out how many values there are in the array
+
+declare -a                   # the variables are treated as arrays
+declare -f                   # uses function names only
+declare -F                   # displays function names without definitions
+declare -i                   # the variables are treated as integers
+declare -r                   # makes the variables read-only
+declare -x                   # marks the variables for export via the environment
+
+${varname:-word}             # if varname exists and isn't null, return its value; otherwise return word
+${varname:=word}             # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:?message}          # if varname exists and isn't null, return its value; otherwise print varname, followed by message and abort the current command or script
+${varname:+word}             # if varname exists and isn't null, return word; otherwise return null
+${varname:offset:length}     # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+
+${variable#pattern}          # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable##pattern}         # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
+${variable%pattern}          # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
+${variable%%pattern}         # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
+${variable/pattern/string}   # the longest match to pattern in variable is replaced by string. Only the first match is replaced
+${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
+
+${#varname}                  # returns the length of the value of the variable as a character string
