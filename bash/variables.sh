@@ -40,3 +40,12 @@ ${variable/pattern/string}   # the longest match to pattern in variable is repla
 ${variable//pattern/string}  # the longest match to pattern in variable is replaced by string. All matches are replaced
 
 ${#varname}                  # returns the length of the value of the variable as a character string
+
+
+*(patternlist)               # matches zero or more occurrences of the given patterns
++(patternlist)               # matches one or more occurrences of the given patterns
+?(patternlist)               # matches zero or one occurrence of the given patterns
+@(patternlist)               # matches exactly one of the given patterns
+!(patternlist)               # matches anything except one of the given patterns
+
+$(UNIX command)              # command substitution: runs the command and returns standard output
