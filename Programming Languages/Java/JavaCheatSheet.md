@@ -20,3 +20,79 @@ public class HelloWorld {
 * For run program 
 
 > **java HelloWorld (main class name)**
+
+### DATA TYPES
+
+|   Type  |      Set of values      |            Values            | Operators |
+|:-------:|:-----------------------:|:----------------------------:|:---------:|
+|   int   |         integers        | between -2^31 and + (2^31)-1 | + - * / % |
+|  double |  floating-point numbers |         real numbers         |  + - * /  |
+| boolean |      boolean values     |         true or false        | && \|\| ! |
+|   char  |        characters       |                              |           |
+|  String | sequences of characters |                              |           |
+
+```java
+//Declaration statement
+int a,b;
+
+//Assignment statement
+a = 13212; //a is the variable name; 13212 is the literal which is assign to the variable a
+
+//Initialization statement
+int c = a + b;
+```
+
+### COMPARISON OPERATORS
+
+| Operation |        Meaning        |
+|:---------:|:---------------------:|
+|     ==    |         equal         |
+|     !=    |       not equal       |
+|     <     |       less than       |
+|     >     |      greater than     |
+|     <=    |   less than or equal  |
+|     >=    | greater than or equal |
+
+### PRINTING
+```java
+  String s = "Happy Coding Folks!!";
+  void System.out.print(String s) //print s
+  void System.out.println(String s) //print s, followed by a newline
+  void System.out.println() //print a newline
+```
+
+### PARSING COMMAND-LINE ARGUMENTS
+```java 
+  String s = "500";
+  int Integer.parseInt(String s) //convert s to an int value
+  double Double.parseDouble(String) //convert s to a double value
+  long Long.parseLong(String s) // convert s to a long value
+
+  int anil;
+  try {
+    anil = Integer.parseInt("Happy Coding Folks!!");
+    }
+    catch (NumberFormatException e)
+    {
+      anil = 0;
+    }
+    System.out.println(anil);
+  }
+````
+
+### MATH LIBRARY
+```java
+  Public Class Math{
+    double abs(double a)    // absolute value of a
+    double max(double a, double b)  //maximum of a and b
+    double min(double a, dobule a)  //minimum of a and b
+    double sin(double theta) //sine of theta
+    double cos(double theta) //cosine of theta
+    double tan(double theta) //tangent of theta
+    double toRadians(double degrees) // convert angle from degrees to radians
+    double toDegrees(double angle)  // convert angle from radians to degrees
+    double exp(double a)  // exponential (e^a)
+    double pow(double a, double p) //raise a to the bth power (a^b)
+    double random() //random in [0,1)
+    double sqrt(double a)  //square root of a
+    }
