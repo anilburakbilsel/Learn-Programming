@@ -20,7 +20,6 @@ public class HelloWorld {
 * For run program 
 
 > **java HelloWorld (main class name)**
-<<<<<<< HEAD
 
 ### DATA TYPES
 
@@ -97,5 +96,3 @@ int c = a + b;
     double random() //random in [0,1)
     double sqrt(double a)  //square root of a
     }
-=======
->>>>>>> f0a26514b1158ddf158d80b2d55ceead64d666bb
