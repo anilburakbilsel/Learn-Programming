@@ -96,3 +96,180 @@ int c = a + b;
     double random() //random in [0,1)
     double sqrt(double a)  //square root of a
     }
+
+### EXAMPLES OF TYPE CONVERSION
+
+  |       Expression      | Expression type | Expression value |
+|:---------------------:|:---------------:|:----------------:|
+| (1 + 2 + 3 + 4) / 4.0 |      double     |        2.5       |
+|      Math.sqrt(4)     |      double     |        2.0       |
+|     "123343" + 99     |      String     |    "12334399"    |
+|       11 * 0.25       |      double     |       2.75       |
+|    (int) 11 * 0.25    |      double     |       2.75       |
+|    11 * (int) 0.25    |       int       |         0        |
+|   (int) (11 * 0.25)   |       int       |         2        |
+
+### CONDITIONAL & LOOP STATEMENT
+#### ANATOMY OF CONDITIONAL STATEMENT
+> IF Statement
+```java
+  if (x>y) { // x > y is the boolean expression
+   //Sequence of statements
+   x = y;
+  } 
+```
+
+> IF-ELSE STATEMENT
+```java
+   if (BOOLEAN EXPRESSION) { 
+   //Sequence of statements
+   } else {
+   //Sequence of statements
+   }
+```
+
+> NESTED IF STATEMENT
+```java
+   if (BOOLEAN EXPRESSION) { 
+   //Sequence of statements
+   } else if {
+   //Sequence of statements
+   }
+   .
+   .
+   .
+   else {
+   //Sequence of statements
+   }
+```
+
+>SWITCH STATEMENT
+```java
+  switch (VARIABLE TO EVALUATE ITS VALUE) {
+    case value: Statement; break;
+    ...
+    ...
+    ...
+    default: Statement; break;
+  }
+```
+**Example:**
+```java
+  int month = 8;
+        String monthString;
+        switch (month) {
+            case 1:  monthString = "January";
+                     break;
+            case 2:  monthString = "February";
+                     break;
+            case 3:  monthString = "March";
+                     break;
+            case 4:  monthString = "April";
+                     break;
+            case 5:  monthString = "May";
+                     break;
+            case 6:  monthString = "June";
+                     break;
+            case 7:  monthString = "July";
+                     break;
+            case 8:  monthString = "August";
+                     break;
+            case 9:  monthString = "September";
+                     break;
+            case 10: monthString = "October";
+                     break;
+            case 11: monthString = "November";
+                     break;
+            case 12: monthString = "December";
+                     break;
+            default: monthString = "Invalid month";
+                     break;
+        }
+```
+
+#### ANATOMY OF A LOOP  STATEMENT
+>FOR LOOP STATEMENT
+```java
+  for (declare and initialize a loop control variable; loop-continuation condition/s; increment or decrement of the variable of control)
+  {
+    //Statement
+  }
+``` 
+**Example:**
+```java  
+  for (int i = 0; i <= n; i++) {
+     System.out.println(i);
+  }
+```
+> WHILE LOOP STATEMENT
+```java
+    while(condition){  //till condition will be true.
+    //code to be executed 
+    }
+```
+**Example:**
+```java
+  //Initialization is a separate statement
+  int power = 1;
+
+  while ( power <= 10/2 ) // power <= n/2 is an example of the loop-continuation condition
+  {
+    System.out.println(power);
+  }
+```
+
+> DO-WHILE LOOP STATEMENT
+
+```java
+  do{ //always run one time even if condition would be false
+    //Statement
+  } while(loop-continuation condition);
+```
+
+**Example:**
+```java
+    int i=1;  
+    do{  
+      System.out.println(i);  
+      i++;  
+    }while(i<=10); 
+```
+
+### ARRAY
+> ARRAY DECLARATION
+
+```java
+    int[]           ai;        // array of int
+    short[][]       as;        // array of array of short
+    short           s,         // scalar short
+                    aas[][];   // array of array of short
+    Object[]        ao;        // array of Object
+    Collection<?>[] ca;  // array of Collection of unknown type
+```
+
+> DECLARATION OF ARRAY VARIABLE
+
+```java
+  Exception ae[]  = new Exception[3];
+  Object aao[][]  = new Exception[2][3];
+  int[] factorial = { 1, 1, 2, 6, 24, 120, 720, 5040 };
+  char ac[]       = { 'n', 'o', 't', ' ', 'a', ' ',
+                      'S', 't', 'r', 'i', 'n', 'g' };
+  String[] aas    = { "array", "of", "String", };
+```
+
+### ACCESS MODIFIERS
+
+1. defualt(No keyword required) 
+2. private
+3. public
+4. protected 
+
+### NON ACCESS MODIFIERS
+
+1. static 
+2. final 
+3. transient
+4. abstract
+5. synchronized
+6. volatile 
