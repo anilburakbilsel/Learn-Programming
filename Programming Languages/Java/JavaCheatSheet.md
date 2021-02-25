@@ -273,3 +273,110 @@ int c = a + b;
 4. abstract
 5. synchronized
 6. volatile 
+
+## Object Oriented Programming (OOPs) Concept :clipboard:
+
+### OBJECT
+
+```java
+  //Declare a variable, object name
+  String s;
+
+  //Invoke a contructor to create an object
+  s = new String ("Hello World");
+
+  //Invoke an instance method that operates on the object's value
+  char c = s.chartAt(4);
+```
+> INSTANCE VARIABLES
+
+```java
+  public class Charge {
+    //Instance variable declarations
+    private final double rx, ry;
+    private final double q;
+  }
+```
+
+### METHODS
+
+```java
+  public static double sum (int a, int b) { //double is the return type, sum is the method's name, a and b are two arguments of type int;
+    int result; //local variable
+    result = a + b;
+    return result;//return statement;
+  }
+```
+
+### CLASS DECLARATION
+```java
+class MyClass {
+    // field, constructor, and 
+    // method declarations
+}
+```
+**Example:**
+
+```java
+    public class Bicycle {
+        // the Bicycle class has
+        // three fields
+        public int cadence;
+        public int gear;
+        public int speed;
+        // the Bicycle class has
+        // one constructor
+        public Bicycle(int startCadence, int startSpeed, int startGear) {
+            gear = startGear;
+            cadence = startCadence;
+            speed = startSpeed;
+        }
+        // the Bicycle class has
+        // four methods
+        public void setCadence(int newValue) {
+            cadence = newValue;
+        }   
+        public void setGear(int newValue) {
+            gear = newValue;
+        }   
+        public void applyBrake(int decrement) {
+            speed -= decrement;
+        }  
+        public void speedUp(int increment) {
+            speed += increment;
+        }
+}
+```
+>DECLARING CLASSESS IMPLEMENTATING AN INTERFACE AND EXTENDING PARENT CLASS
+```java
+class MyClass extends MySuperClass implements YourInterface {
+    // field, constructor, and
+    // method declarations
+}
+```
+* MyClass is a subclass of MySuperClass and that it implements the YourInterface interface.
+
+> CONSTRUCTORS
+* A class contains constructors that are invoked to create objects from the class blueprint.
+* Constructor declarations look like method declarations—except that they use the name of the class and have no return type
+* Each and every class has defualt No-args constructor.
+
+
+```java
+  public class Bicycle{
+      
+      private int gear;
+      private int cadence;
+      private int speed;
+     
+      public Bicycle(int startCadence, int startSpeed, int startGear) { //args-constructor
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+      }
+
+      public Bicycle(){//No-args constructor
+        super();
+      }
+  }
+```
