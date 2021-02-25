@@ -380,3 +380,91 @@ class MyClass extends MySuperClass implements YourInterface {
       }
   }
 ```
+
+### POLYMORPHISM
+* Polymorphism is the concept where an object behaves differently in different situations.
+*  There are two types of polymorphism 
+    1. compile time polymorphism 
+    2. runtime polymorphism.
+
+#### 1. Compile Time Polymorphism
+* Compile-time polymorphism is achieved by method overloading.
+* method overloading is creating multiple method with methods name is same and arguments are different. 
+```java
+  public class Circle {
+
+    public void draw(){
+      System.out.println("Drwaing circle with default color Black and diameter 1 cm.");
+    }
+
+    public void draw(int diameter){ //method draw() overloaded.
+      System.out.println("Drwaing circle with default color Black and diameter"+diameter+" cm.");
+    }
+
+    public void draw(int diameter, String color){ //method draw() overloaded.
+      System.out.println("Drwaing circle with color"+color+" and diameter"+diameter+" cm.");
+    }
+  }
+```
+#### 2. Run Time Polymorphism
+* Run-time polymorphism is achieved by method overriding.
+* Runtime polymorphism is implemented when we have an **“IS-A”** relationship between objects.
+* method overriding is the subclass has to override the superclass method.
+```java
+    public interface Shape {
+
+	    public void draw();
+    }
+```
+```java
+    public class Circle implements Shape{
+
+      @Override
+      public void draw(){
+        System.out.println("Drwaing circle");
+      }
+
+    }
+```
+```java
+    public class Square implements Shape {
+
+      @Override
+      public void draw() {
+        System.out.println("Drawing Square");
+      }
+
+    }
+```
+* `Shape` is the superclass and there are two subclasses `Circle` and `Square`
+* Below is an example of runtime polymorphism.
+```java
+    Shape sh = new Circle();
+    sh.draw();
+
+    Shape sh1 = getShape(); //some third party logic to determine shape
+    sh1.draw();
+```
+
+### INHERITANCE
+
+* Inheritance is the mechanism of code reuse. 
+* The object that is getting inherited is called the superclass and the object that inherits the superclass is called a subclass.
+* We use `extends` keyword in java to implement inheritance from class.
+* We use `implements` keyword in java to implement inheritance from interface.
+
+```java
+    public class Superclass{
+      // methods and fields
+    }
+```
+```java
+    public interface Superinterface{
+      // methods and fields
+    }
+```
+```java
+    public class Subclass extends Superclass implements Superinterface{
+      // methods and fields
+    }
+```
