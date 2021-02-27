@@ -468,3 +468,79 @@ class MyClass extends MySuperClass implements YourInterface {
       // methods and fields
     }
 ```
+
+### Abstraction
+
+* Abstraction is the concept of hiding the internal details and describing things in simple terms.
+* Abstraction can be achieved by two ways.
+  1. Abstract Class
+  2. Interface
+  
+#### 1. Abstract Class
+* An abstract class must be declared with an `abstract` keyword.
+* It can have abstract and non-abstract methods.
+* It cannot be instantiated.
+* It can have constructors and static methods also.
+* It can have final methods which will force the subclass not to change the body of the method.
+
+```java
+    abstract class Flower{
+        abstract String Smell(); //abstract method.
+        String Oil(){  // non-abstract method. 
+           System.out.println("Flower Oil is good.");
+         }
+    }
+
+    public class Lily extends Flower{
+        private String Smell(){ // implementation of abstarct method.
+          System.out.println("Lily smell's lovender.");
+        }
+    }
+```
+
+#### 2. Interface
+* Interface is a blueprint of a **class**.
+* It can have only abstract methods. [Except Java 8 and next versions.]
+* Since Java 8, we can have **default and static** methods in an interface.
+
+
+```java
+    interface print{  
+        void printPaper();  
+    }  
+    public class A4 implements print{  
+        public void printPaper(){
+          System.out.println("A4 Page Printed. ");
+        }  
+    }
+```
+### Encapsulation
+
+* Encapsulation is used for access restriction to class members and methods.
+* Encapsulation is the technique used to implement abstraction in OOP.
+* As in encapsulation, the data in a class is hidden from other classes, so it is also known as **data-hiding** (encapsulation is achieved by data hiding).
+* Encapsulation can be achieved by declaring all the variables in the class as private and writing public methods in the class to set and get the values of variables.
+* Best example of Encapsulation is POJO (Plain-Java-Object-Class).
+  
+ ```java
+    public class User {
+        private String username;
+        private String password;
+
+        public String getUsername() {
+          return username;
+        }
+
+        public void setUsername(String username) {
+          this.username = username;
+        }
+
+        public String getPassword() {
+          return password;
+        }
+
+        public void setPassword(String password) {
+          this.password = password;
+        }
+    }
+ ```
