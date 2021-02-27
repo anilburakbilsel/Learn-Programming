@@ -544,3 +544,28 @@ class MyClass extends MySuperClass implements YourInterface {
         }
     }
  ```
+
+## ADVANCE DATA TYPE
+* **STACK DATA TYPE**
+
+```java
+  public class Stack<Item> implements Iterable <Item>
+
+  Stack()   //create an empty stack
+  boolean isEmpty() //return if the stack empty
+  void push(Item item) // push an item onto the stack
+  Item pop() //return and remove the item that was inserted most recently
+  int size() //number of item on stack
+```
+
+* **QUEUE DATA TYPE**
+
+```java
+  public class Queue<Item> implements Iterable<Item>
+
+  Queue()  //create an emptyh queue
+  boolean isEmpthy()  //return if the queue empthy
+  void enqueue(Item item) // insert an item onto queue
+  Item dequeue()  //return and remove the item that was inserted least recently
+  int size() //number of item on queue
+```
