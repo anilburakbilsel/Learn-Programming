@@ -28,7 +28,7 @@ class MergeSort {
         
         int mid = len / 2;
         int [] left_arr = new int[mid];
-        int [] right_arr = new int[len-mid];
+        int [] right_arr = new int[len - mid];
         
       //Dividing array into two and copying into two separate arrays
         int k = 0;
