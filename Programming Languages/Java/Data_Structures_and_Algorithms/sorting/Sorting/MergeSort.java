@@ -1,8 +1,10 @@
-class Sorting {
+package sorting;
 
-    public static void merge(int[] left_arr,int[] right_arr, int[] arr,int left_size, int right_size){
+class MergeSort {
+
+    public static void merge(int[] left_arr, int[] right_arr, int[] arr, int left_size, int right_size){
         
-        int i=0,l=0,r = 0;
+        int i = 0, l = 0,r = 0;
         //The while loops check the conditions for merging
         while(l<left_size && r<right_size){
             
@@ -26,7 +28,7 @@ class Sorting {
         
         int mid = len / 2;
         int [] left_arr = new int[mid];
-        int [] right_arr = new int[len-mid];
+        int [] right_arr = new int[len - mid];
         
       //Dividing array into two and copying into two separate arrays
         int k = 0;
