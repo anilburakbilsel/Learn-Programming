@@ -1,4 +1,4 @@
-class Sorting {
+class MergeSort {
 
     public static void merge(int[] left_arr,int[] right_arr, int[] arr,int left_size, int right_size){
         
