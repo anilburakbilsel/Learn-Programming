@@ -8,7 +8,7 @@ class MergeSort {
         //The while loops check the conditions for merging
         while(l<left_size && r<right_size){
             
-            if(left_arr[l]<right_arr[r]){
+            if(left_arr[l] < right_arr[r]){
                 arr[i++] = left_arr[l++];
             }
             else{
