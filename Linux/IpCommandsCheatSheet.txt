@@ -4,10 +4,17 @@ IP Command Cheat Sheet for ADDRESSING and ROUTING
 ADDRESSING
 ---------------------------------------------------------------------------------------------
 ip address show                              - Show all IP addresses
-ip address show eth0                         - Show IP addresses of eth0 (or another specified NIC)
+ip address show eth0                         - Show IP addresses of eth0 (or another specified NIX)
 ip address show up                           - Show IPs of those interfaces that are up
 ip address show dynamic|permanent            - Show dynamic or static
 ip address add 10.0.1.20/24 dev eth0         - Add a new IP 10.0.1.20 to eth0
 ip address add 10.0.1.20/24 dev eth0 lablel eth0:Interface1 - Add IP and label it
 ip address delete 10.0.1.20/24 dev eth0      - Deletes the address from interface
 ip address flush dev eth0                    - Delete all IPs from an interface
+
+ROUTING
+If you set up a static route and interface goes down - that route is removed from active routing table
+---------------------------------------------------------------------------------------------
+ip route [show]                              - show the routing table, includes IPv4 and IPv6
+ip -6 route                                  - show only IPv6 , which are not shown by default
+ip -4 route                                  - show only IPv4
