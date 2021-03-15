@@ -4,7 +4,7 @@ IP Command Cheat Sheet for ADDRESSING and ROUTING
 ADDRESSING
 ---------------------------------------------------------------------------------------------
 ip address show                              - Show all IP addresses
-ip address show eth0                         - Show IP addresses of eth0 
+ip address show eth0                         - Show IP addresses of eth0 (or another specified NIC)
 ip address show up                           - Show IPs of those interfaces that are up
 ip address show dynamic|permanent            - Show dynamic or static
 ip address add 10.0.1.20/24 dev eth0         - Add a new IP 10.0.1.20 to eth0
