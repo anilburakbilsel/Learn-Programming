@@ -18,3 +18,6 @@ If you set up a static route and interface goes down - that route is removed fro
 ip route [show]                              - show the routing table, includes IPv4 and IPv6
 ip -6 route                                  - show only IPv6 , which are not shown by default
 ip -4 route                                  - show only IPv4
+ip route show root 10.0.1.10/24              - use supernet to include more specific routes to show
+ip route show match 10.0.1.10/24             - show routes to this and LARGER nets
+ip route show exact 10.0.1.10/24             - show routes to EXACT network only
