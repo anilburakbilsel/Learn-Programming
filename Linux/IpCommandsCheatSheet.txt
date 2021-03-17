@@ -21,3 +21,21 @@ ip -4 route                                  - show only IPv4
 ip route show root 10.0.1.10/24              - use supernet to include more specific routes to show
 ip route show match 10.0.1.10/24             - show routes to this and LARGER nets
 ip route show exact 10.0.1.10/24             - show routes to EXACT network only
+ip route get 10.0.1.10/24                    - Simulate resolving of a route in real time
+ip route add 10.0.1.10/24 via 10.13.77.1     - Add new route to 10.0.1.10/24 via nexthop
+ip route add 10.0.1.10/24 dev eth0           - Add new route to 10.0.1.10/24 via interface
+ip route delete 10.0.1.10/24 via 10.13.77.1  - Delete specific route
+ip route delete 10.0.1.10/24                 - Delete specific route
+ip route change 10.0.1.10/24 dev eth0        - change some params of existing route
+ip route replace 10.0.1.10/24 dev eth0       - replace if exists add if not 
+ip route add default via 10.10.10.1          - Add default route via next hop
+ip route add default dev eth0                - Add default route via interface
+ip route add 0.0.0.0/0 dev eth0              - Add default route via the interface 
+ip route delete default dev eth0             - Delete Default route
+ip -6 route add default via 2001:db8         - Add IPv6 default route
+ip route add blackhole 10.0.5.10             - Black hole some route
+ip route add unreachable 10.10.10.0/24       - Block destination route, sends â€œHost unreachableâ€
+ip route add prohibit 10.1.1.1/32            - Block destination route, sends ICMP â€œAdministratively prohibitedâ€
+ip route add throw 10.1.1.1/32               - Block destination route, sends â€œnet unreachableâ€
+ip route add 10.10.10.0/24 via 10.1.1.1 metric 5 - Add route with custom metric
+ip route add default nexthop via 10.10.10.1 weight 1 nexthop dev ens33 weight 10 - Add default route with custom weight, higher weight preferred
