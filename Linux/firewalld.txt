@@ -1,0 +1,6 @@
+For detailed information, please see the man page: https://firewalld.org/documentation/man-pages/firewall-cmd.html
+
+firewall-cmd --state                   -- Display whether service is running
+systemctl status firewalld             -- Another command to display status of service
+systemctl restart firewall-cmd         -- To restart service
+firewall-cmd --reload                  -- To reload the permanent rules without interrupting existing persistent connections
