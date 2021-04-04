@@ -1,4 +1,5 @@
-For detailed information, please check out the man page: https://firewalld.org/documentation/man-pages/firewall-cmd.html
+For detailed information, please check out the man page of firewall daemon below: 
+    - https://firewalld.org/documentation/man-pages/firewall-cmd.html
 firewalld is a daemon that runs in the background and listens other processes and requests
 
 firewall-cmd --state                   -- Display whether service is running
