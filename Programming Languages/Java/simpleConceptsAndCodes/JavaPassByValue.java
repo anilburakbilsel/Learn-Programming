@@ -19,6 +19,9 @@ public class JavaPassByValue {
     public static void change(int x) {
         // here, x is a copy of the real x variable defined in the main function
         x = 10;
+
+        // a primitive value passed to a function cannot be modified by the function
+        // primitives values in java always pass by value!
     }
 
     public static void changeWillNotBeShown(Test t) {
@@ -32,6 +35,7 @@ public class JavaPassByValue {
     // This change() doesn't change the reference, it only
     // changes member of object referred by reference
     public static void visibleChange(Test t) {
+        // an object passed to a function can have its members modified by the function
         t.x = 3000;
     }
 
